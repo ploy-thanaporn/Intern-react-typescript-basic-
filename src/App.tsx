@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import InputFeild from "./components/InputFeild";
 import { Todo } from "./components/model";
+import TodoList from "./components/TodoList";
 
 // type React => React.FunctionComponent
 const App: React.FC = () => {
@@ -22,6 +23,7 @@ const App: React.FC = () => {
     <div className="App">
       <span className="heading">Taskify</span>
       <InputFeild todo={todo} setTodo={setTodo} handleAddTask={handleAddTask} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 };

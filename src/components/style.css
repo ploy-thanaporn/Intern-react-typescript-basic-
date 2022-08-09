@@ -40,3 +40,55 @@
   transform: scale(0.8);
   box-shadow: 0 0 2px black;
 }
+
+.todos {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.todos-single {
+  display: flex;
+  align-items: center;
+  width: 29.5%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background-color: rgba(66, 68, 71, 0.78);
+  transition: 0.2s;
+}
+.todos-single-text {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.todos-single-text:focus {
+  outline: none;
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .todos-single {
+    width: 40%;
+  }
+}
+@media (max-width: 700px) {
+  .input {
+    width: 95%;
+  }
+  .todos {
+    width: 95%;
+  }
+  .todos-single {
+    width: 100%;
+  }
+}
