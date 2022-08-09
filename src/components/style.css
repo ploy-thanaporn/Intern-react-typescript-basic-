@@ -1,6 +1,6 @@
 .input {
   display: flex;
-  width: 90%;
+  width: 95%;
   position: relative;
   align-items: center;
 }
@@ -41,23 +41,39 @@
   box-shadow: 0 0 2px black;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  margin-top: 12px;
+}
+.todos-heading {
+  font-size: 24px;
+}
 .todos {
   display: flex;
-  justify-content: space-evenly;
-  width: 90%;
-  flex-wrap: wrap;
+  width: 47.5%;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.699);
   color: white;
+  transition: 0.2s;
 }
 
 .todos-single {
   display: flex;
   align-items: center;
-  width: 29.5%;
   border-radius: 5px;
   padding: 20px;
   margin-top: 15px;
-  background-color: rgba(66, 68, 71, 0.78);
+  background-color: rgba(66, 68, 71);
   transition: 0.2s;
+}
+.todos-single:hover {
+  box-shadow: 0 0 4px black;
+  transform: scale(1.03);
 }
 .todos-single-text {
   flex: 1;
@@ -70,15 +86,19 @@
   outline: none;
 }
 
+.remove {
+  background-color: rgb(173, 39, 39);
+}
+
 .icon {
   margin-left: 10px;
   font-size: 20px;
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .todos-single {
-    width: 40%;
+@media (max-width: 1100px) {
+  .todos {
+    width: 45%;
   }
 }
 @media (max-width: 700px) {
@@ -87,8 +107,10 @@
   }
   .todos {
     width: 95%;
+    margin-bottom: 10px;
   }
-  .todos-single {
-    width: 100%;
+  .container {
+    width: 95%;
+    flex-direction: column;
   }
 }
