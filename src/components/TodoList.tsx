@@ -20,9 +20,9 @@ const TodoList: React.FC<Props> = ({
   return (
     <div className="container">
       <Droppable droppableId="TodosList">
-        {(provided) => (
+        {(provided, snapshot) => (
           <div
-            className="todos"
+            className={`todos ${snapshot.isDraggingOver ? "dragactive" : ""}`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
@@ -36,14 +36,17 @@ const TodoList: React.FC<Props> = ({
                 setTodos={setTodos}
               />
             ))}
+            {/* ขยายตามพื้นที่ */}
             {provided.placeholder}
           </div>
         )}
       </Droppable>
-      <Droppable droppableId="TodosList">
-        {(provided) => (
+      <Droppable droppableId="TodosRemove">
+        {(provided, snapshot) => (
           <div
-            className="todos remove"
+            className={`todos remove ${
+              snapshot.isDraggingOver ? "dragcomplete" : ""
+            }`}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >

@@ -87,7 +87,7 @@
 }
 
 .remove {
-  background-color: rgb(173, 39, 39);
+  background-color: rgb(40, 146, 104);
 }
 
 .icon {
@@ -96,6 +96,17 @@
   cursor: pointer;
 }
 
+.dragactive {
+  background-color: rgb(40, 40, 40);
+}
+
+.dragcomplete {
+  background-color: rgb(91, 172, 139);
+}
+
+.drag {
+  box-shadow: 0 0 20px black;
+}
 @media (max-width: 1100px) {
   .todos {
     width: 45%;

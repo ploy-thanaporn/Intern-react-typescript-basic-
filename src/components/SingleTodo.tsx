@@ -11,7 +11,7 @@ type Props = {
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 };
 
-const SingleTodo = ({ todo, todos, setTodos, index }: Props) => {
+const SingleTodo = ({ index, todo, todos, setTodos }: Props) => {
   // edit ถูกใช้อยู่รึป่าว
   const [edit, setEdit] = useState<boolean>(false);
   // เก็บค่า edit ไว้เพื่อให้ระบุรายการที่จะการแก้ไข
@@ -47,9 +47,9 @@ const SingleTodo = ({ todo, todos, setTodos, index }: Props) => {
 
   return (
     <Draggable draggableId={todo.id.toString()} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <form
-          className="todos-single"
+          className={`todos-single ${snapshot.isDragging ? "drag" : ""}`}
           onSubmit={(e) => handleEdit(e, todo.id)}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
